@@ -126,7 +126,7 @@ class AcRBMQChannel(MQChannel):
         return self._channel
 
     def start(self, callback):
-        self._channel.basic_consume(self._queue, callback, auto_ack=True)
+        self._channel.basic_consume(queue=self._queue, consumer_callback=callback)
         self._channel.start_consuming()
 
 

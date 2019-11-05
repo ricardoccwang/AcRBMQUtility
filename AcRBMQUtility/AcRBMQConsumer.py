@@ -23,6 +23,7 @@ class _AcRBMQConsumer(threading.Thread):
         self._MQ_Channel.UnBind_Queue(queue=queue, exchange=exchange, routing_key=sub)
 
     def run(self):
+        print("callback = ", self._callback)
         self._MQ_Channel.start(self._callback)
 
     def Connect(self):

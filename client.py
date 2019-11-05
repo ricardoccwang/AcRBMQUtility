@@ -132,11 +132,11 @@ def get_default_channel():
     channel = AcRBMQChannel()
     channel.Set_credentials(user="admin",
                             password="admin",
-                            host="localhost",
+                            host="172.20.0.129",
                             port=5672,
                             vhost="/dhhf",
-                            create_queue="1", # 这个为1则表示会自动创建队列，否则会使用已有的队列
-                            queue="FullData133") # 这个队列名是自定义自己的队列的名字
+                            create_queue="1" # 这个为1则表示会自动创建队列，否则会使用已有的队列
+                            ) # 这个队列名是自定义自己的队列的名字
     return channel
 
 def get_全推_subscribe(subscribe_list, callback, delegate):
